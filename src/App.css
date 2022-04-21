@@ -1,8 +1,28 @@
+body {
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F56%2F19%2Fd5%2F5619d5d0b17eead50a13c4fb641167a7.jpg&f=1&nofb=1');
+  background-size: cover;
+}
 .App {
   text-align: center;
 }
 
+h1 {
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 5%;
+}
+
+.piramid {
+  display: inline-block;
+  padding: 40px;
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fegypt-clipart-3d-pyramid-1.png&f=1&nofb=1');
+  background-size: cover;
+  background-position: center;
+}
+
 input {
+  margin: 4px;
   width: 40px;
   text-align: center;
   font-size: 20px;

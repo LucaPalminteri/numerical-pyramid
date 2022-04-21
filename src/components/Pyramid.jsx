@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 
 export default function Pyramid() {
-    const test = createBase(5)
+
+    //const [test, setTest] = useState(createBase(8))
+    const test = createBase(4)
     ordenatedBase(test)
 
     useEffect(()=> {
 
     },[])
 
-    function changeInput() {
-
+    function changeInput(e) {
+        console.log(e.target.value);
     }
 
     function createBase(n) {
@@ -42,24 +44,26 @@ export default function Pyramid() {
     }
 
     function newPyramid(arr) {
+        let pyramid = []
 
         for (let i = 0; i < arr.length; i++) {
+            let line = []
             for (let j = 0; j < arr[i].length; j++) {
+                line.push(<input onChange={changeInput} key={nanoid()} type='number' value={arr[i][j]}/>)
             }
+            pyramid.push(<div key={nanoid()}>{line}</div>)
         }
 
         return(
-            <div>
-                <div><input onChange={changeInput} value={arr[4]}/></div>
-                <div><input onChange={changeInput} value={arr[3][0]}/><input onChange={changeInput} value={arr[3][1]}/> </div>
-                <div><input onChange={changeInput} value={arr[2][0]}/><input onChange={changeInput} value={arr[2][1]}/><input onChange={changeInput} value={arr[2][2]}/></div>
-                <div><input onChange={changeInput} value={arr[1][0]}/><input onChange={changeInput} value={arr[1][1]}/><input onChange={changeInput} value={arr[1][2]}/><input onChange={changeInput} value={arr[1][3]}/> </div>
-                <div><input onChange={changeInput} value={arr[0][0]}/><input onChange={changeInput} value={arr[0][1]}/><input onChange={changeInput} value={arr[0][2]}/><input onChange={changeInput} value={arr[0][3]}/><input onChange={changeInput} value={arr[0][4]}/> </div>
+            <div className="piramid">
+                {pyramid.reverse()}
             </div>
         )
     }
 
     //console.log(test.reverse())
+
+    console.log(test);
 
     return (
         <div>
