@@ -11,7 +11,7 @@ export default function Clock({second,minute}) {
             if(sec < 60) {
                 setSec(prev=>prev+1)
             }
-            else if(sec === 60) {
+            else if(sec === 59) {
                 setMin(prev=>prev+1)
                 setSec(0)
             }

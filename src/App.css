@@ -1,6 +1,9 @@
 body {
   background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F56%2F19%2Fd5%2F5619d5d0b17eead50a13c4fb641167a7.jpg&f=1&nofb=1');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
 .App {
   text-align: center;
@@ -14,12 +17,20 @@ h1 {
 }
 
 .difficulty {
-  background-color: #e6e600;
+  width: 50%;
+  margin: auto;
+  border-radius: 20px;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ff3e168%2Fsand-surface-desert.jpg&f=1&nofb=1');
+}
+
+h4 {
+  padding-top: 20px;
+  font-size: 30px;
 }
 
 .piramid {
   display: inline-block;
-  padding: 40px;
+  padding: 40px 80px;
   background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fegypt-clipart-3d-pyramid-1.png&f=1&nofb=1');
   background-size: cover;
   background-position: center;
@@ -67,5 +78,35 @@ button {
 }
 
 button:hover {
-  background-color: #ababab;
+  background-color: #58a758;
+}
+
+@keyframes start {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
+
+.message {
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ff3e168%2Fsand-surface-desert.jpg&f=1&nofb=1');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: start;
+  animation-duration: 1s;
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  background-color: green;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 40px;
+  border-radius: 15px;
 }
