@@ -16,9 +16,9 @@ export default function Clock({second,minute}) {
                 setSec(0)
             }
         },1000)
-    })
+    },[sec])
 
-    if(min/10 < 10) mins = '0' + min
+    if(min < 10) mins = '0' + min
     else mins = min
     if(sec < 10) secs = '0' + sec
     else secs = sec
