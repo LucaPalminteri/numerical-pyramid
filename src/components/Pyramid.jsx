@@ -100,7 +100,7 @@ export default function Pyramid(props) {
 
     function verify() {
         setFinish(true)
-        if(aux === tries) setWin(true);
+        if(aux >= tries) setWin(true);
         else console.log("lose");
         setTimeout(()=>{
             setTest(createBase(props.value))

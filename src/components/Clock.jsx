@@ -8,10 +8,10 @@ export default function Clock({second,minute}) {
 
     useEffect(()=>{
         setTimeout(()=>{
-            if(sec < 60) {
+            if(sec < 59) {
                 setSec(prev=>prev+1)
             }
-            else if(sec === 59) {
+            else if(sec >= 59) {
                 setMin(prev=>prev+1)
                 setSec(0)
             }
