@@ -49,11 +49,11 @@ input {
 .clock {
   background-color: #efefef;
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 25px;
+  padding: 5px 15px;
+  font-size: 30px;
   margin: 20px;
   border-radius: 6px;
-  border: 2px solid;
+  border: 8px ridge rgba(211, 220, 50, .6);;
 }
 
 .helper {
@@ -96,6 +96,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   animation-name: start;
   animation-duration: 1s;
   position: absolute;
@@ -109,4 +110,20 @@ button:hover {
   bottom: 0;
   font-size: 40px;
   border-radius: 15px;
+  padding: 20px;
+}
+
+.clock-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  padding: 0px;
 }

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
+export {mins, secs}
+let secs, mins
 
 export default function Clock({second,minute}) {
+    
     let a = 7;
     const [sec,setSec] = useState(second)
     const [min,setMin] = useState(minute)
-    let secs, mins
-
+    
     useEffect(()=>{
         setTimeout(()=>{
             if(sec < 59) {
@@ -30,3 +32,4 @@ export default function Clock({second,minute}) {
         </div>
     )
 }
+

@@ -2,12 +2,19 @@ import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import Clock from "./Clock";
 import Confetti from 'react-confetti'
+import { secs, mins } from "./Clock";
 
 export default function Pyramid(props) {
 
     const [test, setTest] = useState([])
     const [win, setWin ] = useState(false);
-    const [finish,setFinish] = useState(false)
+    const [finish,setFinish] = useState(false);
+    const [record,setRecord] = useState([])
+
+    useEffect(()=> {
+        setRecord([mins,secs])
+    },[secs])
+
     ordenatedBase(test)
     let aux = 0,tries = 0;
 
@@ -16,7 +23,6 @@ export default function Pyramid(props) {
     },[])
 
     function changeInput(e,i,j) {
-        
         e.target.value == test[i][j] ? 
         aux++:
         console.log("Not equals");
@@ -111,10 +117,36 @@ export default function Pyramid(props) {
 
     return (
         <div onKeyPress={handleKeyPress}>
+            <main>
+                {finish ? 
+                    win ? 
+                    <div className="message">
+                        <div>Win</div>
+                        <div>Time: {mins}:{secs}</div>
+                    </div> : 
+                    <div className="message">
+                        <div>Lose</div>
+                        <div>Time: {mins}:{secs}</div>
+                    </div> :
+                <></> }
+                {newPyramid(test)}
+                <div className="clock-container"> 
+                    {finish ? 
+                    <>
+                        <label>Time:</label>
+                        <div className="clock">00:00</div>
+                    </>
+                     : 
+                    <>
+                        <label>Time:</label>
+                        <Clock second={0} minute={0}/>
+                    </>
+                    }
+                    <label>Record:</label>
+                    <span className="clock">{record[0]}:{record[1]}</span>
+                </div>
+            </main>
             {win && <Confetti width={window.innerWidth} height={window.innerHeight} gravity={0.5}/>}
-            {finish ? win ? <div className="message">Win</div> : <div className="message">Lose</div> :<></> }
-            {newPyramid(test)}
-            <Clock second={0} minute={0}/>
             <div>
                 <button onClick={toggle}>New Game</button>
                 <button onClick={verify}>Finish</button>
